@@ -23,7 +23,7 @@ if api_key:
         api_key=api_key,
         model=selected_model)
 else:
-    Print("Please past your API "
+    Print("Please past your API ")
 
 # Title and header
 st.title("🌟 RockyBot 🪄")
