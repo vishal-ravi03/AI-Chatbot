@@ -6,6 +6,9 @@ import warnings
 warnings.filterwarnings('ignore')
 load_dotenv()
 
+api_key = st.sidebar.text_input("Enter your API Key:", type="password")
+
+
 # Sidebar Model Selection
 st.sidebar.title("🧠 Model Selector")
 selected_model = st.sidebar.selectbox(
@@ -15,7 +18,12 @@ selected_model = st.sidebar.selectbox(
 )
 
 # Load selected model
-LLM = ChatGroq(model=selected_model)
+if api_key:
+    LLM = ChatGroq(
+        api_key=api_key,
+        model=selected_model)
+else:
+    Print("Please past your API "
 
 # Title and header
 st.title("🌟 RockyBot 🪄")
